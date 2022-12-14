@@ -1,0 +1,45 @@
+
+<html>
+
+<head>
+    <title> Test File</title>
+</head>
+
+<body>
+    <div>
+        <h2> Coustomer Details </h2>
+        <form id="onSubmit" style="box-shadow:10px; background-color:aqua; width: 600px; padding: 20px; border-radius: 10px;">
+            <label style="margin: 10px;">Coustomer name:</label>
+            <input type="text" class="a" style="margin: 10px;" /><br />
+            <label for="lname" style="margin: 10px;">Start Date</label>
+            <input type="date" class="a" style="margin: 10px;" />
+            <label for="lname"  style="margin: 10px;">End Date</label>
+            <input type="date" style="margin: 10px;" /><br />
+            <label style="margin: 10px;">Product A:</label>
+            <input type="text" class="a" style="margin: 10px;" /><br />
+            <label style="margin: 10px;">Product B:</label>
+            <input type="text" class="a" style="margin: 10px;" /><br />
+            <label style="margin: 10px;">Invoice GST </label>
+            <input type="text" class="a" style="margin: 10px;" />
+            <label style="margin: 10px;">CGST </label>
+            <input type="text" class="a"style="margin: 10px;" /><br />
+            <button onclick="click()" style="background-color:powderblue; color: white; border: 5px solid green; border-radius: 10px;">
+                Submit </button>
+        </form>
+    </div>
+</body>
+<script>
+ const submit = document.getElementById("onSubmit")
+
+ const click = submit.addEventListener('click',function(){
+    const url = "https://jsonplaceholder.typicode.com/todos"
+    fetch(url)
+    .then(response=>response.json)
+    .then(response=>{
+        console.log("data saved")
+    })
+ })
+
+</script>
+
+</html>
